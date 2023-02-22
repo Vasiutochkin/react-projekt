@@ -1,9 +1,9 @@
-import {Fragment, useState} from "react";
+import {Fragment} from "react";
 import './style.css'
 import {NavLink} from "react-router-dom";
+import {FormMovies} from "../FormMovies/FormMovies";
 
 const NavBar = () => {
-    const {toggle, setToggle} = useState()
     return (
         <Fragment>
             <nav className={''}>
@@ -15,9 +15,9 @@ const NavBar = () => {
                     <NavLink to={'trending'}><span>Trending</span></NavLink>
                 </div>
                 <div className='input-group'>
-                    <input type='text' placeholder='Search movies'/>
-                    <div id='Color-switcher' onClick={() => setToggle(!toggle)}>
-                        <div id={toggle ? 'Color-switcher-mover' : 'Color-switcher-moved'}></div>
+                    <FormMovies/>
+                    <div id='Color-switcher'>
+                        <div></div>
                     </div>
                 </div>
             </nav>

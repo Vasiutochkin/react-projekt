@@ -13,9 +13,8 @@ const App = () => {
                 <Route path='/tvShows' element={<TvShowsPage/>}/>
                 <Route path='/trending' element={<TrendingPage/>}/>
 
-                <Route path='/:movieId' element={<MovieDetailsPage/>}/>
+                <Route path=':movieId' element={<MovieDetailsPage/>}/>
             </Routes>
-            {/*<Route path={'*'} element={<NotFoundPage/>}/>*/}
         </div>
     );
 };
