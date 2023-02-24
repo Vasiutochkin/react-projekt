@@ -1,28 +1,56 @@
-import {Fragment} from "react";
-import './style.css'
+import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
 import {NavLink} from "react-router-dom";
+
 import {FormMovies} from "../FormMovies/FormMovies";
+import {toggleActions} from "../../redux";
+import './style.css'
 
 const NavBar = () => {
+
+    const [toggle, setToggle] = useState(true);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(toggleActions.getToggle(toggle))
+    }, [toggle])
+
     return (
-        <Fragment>
-            <nav className={''}>
-                <div className={'nav-options'}>
-                    <h1>CINEMA ROOM</h1>
-                    <NavLink to={''}><span>Movies</span></NavLink>
-                    <NavLink to={'genre'}><span>Movies genre</span></NavLink>
-                    <NavLink to={'tvShows'}><span>TV Shows</span></NavLink>
-                    <NavLink to={'trending'}><span>Trending</span></NavLink>
+        <nav className={toggle ? '' : 'navBarColor'}>
+            <div className={'nav-options'}>
+                <h1 id={toggle ? 'Movies' : 'heading'}>CINEMA ROOM</h1>
+
+                <NavLink to={''}>
+                    <span id={toggle ? '' : 'MoviesLight'}>Movies</span>
+                </NavLink>
+
+                <NavLink to={'genre'}>
+                    <span id={toggle ? '' : 'MoviesLight'}>Movies genre</span>
+                </NavLink>
+
+                <NavLink to={'tvShows'}>
+                    <span id={toggle ? '' : 'MoviesLight'}>TV Shows</span>
+                </NavLink>
+
+                <NavLink to={'trending'}>
+                    <span id={toggle ? '' : 'MoviesLight'}>Trending</span>
+                </NavLink>
+
+            </div>
+            <div className='input-group'>
+
+                <FormMovies/>
+
+                <div id='Color-switcher' onClick={() => setToggle(!toggle)}>
+                    <div id={toggle ? 'Color-switcher-mover' : 'Color-switcher-moved'}></div>
                 </div>
-                <div className='input-group'>
-                    <FormMovies/>
-                    <div id='Color-switcher'>
-                        <div></div>
-                    </div>
-                </div>
-            </nav>
-        </Fragment>
+
+            </div>
+        </nav>
     );
 };
 
-export {NavBar};
+export {
+    NavBar
+};

@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = setupStore();
 
 root.render(
-    <Provider store={store}>
+    <Provider store={store} >
         <BrowserRouter>
             <App/>
         </BrowserRouter>

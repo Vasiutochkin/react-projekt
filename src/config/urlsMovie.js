@@ -5,7 +5,6 @@ const urlsMovie = {
     movies: '/discover/movie?page=2',
     movieById: '/movie',
     searchMovie: '/search/movie?query',
-
     genre: '/genre/movie/list'
 }
 

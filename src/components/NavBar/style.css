@@ -5,46 +5,45 @@ nav {
     background-color: #001219;
     align-items: center;
 }
+
+#heading{
+    color: #2a2727;
+}
+
+span #HomeLight, #MoviesLight, #TrendingLight, #PricingLight{
+    color: #151313;
+}
+span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:hover{
+    border-bottom: 2px solid #ff206e;}
+
 nav h1{
-    color: #d35757;
+    color: #ff206e;
     margin-left: 40px;
 }
 nav a {
     text-decoration: none;
 }
 nav span{
-    color: #979d41;
+    color: #eac786;
     cursor: pointer;
     margin-left: 40px;
-    font-size: .85rem;
+    font-size: .99rem;
     text-transform: uppercase;
 }
+
 nav span:hover{
-    color: #fff;
+    color: #EE9B00;
     border-bottom: 2px solid #EE9B00;
     padding-bottom: 5px;
 }
-span #HomeLight, #MoviesLight, #TrendingLight, #PricingLight{
-    color: #fff;
-}
-span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:hover{
-    border-bottom: 2px solid #ff206e;
-}
-#navBarColor{
+
+.navBarColor{
     background-color: #38bdab;
     transition: .6s;
 }
 .nav-options{
     display: flex;
     align-items: center;
-}
-
-#heading{
-    color: #ff206e;
-}
-#navBarColor span:hover{
-    border-bottom: 2px solid #ff206e;
-    padding-bottom: 5px;
 }
 .input-group{
     display: flex;
@@ -78,6 +77,7 @@ span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:h
     border-radius: 50%;
     transition: .6s;
 }
+
 .input-group input{
     position: relative;
     width: 323px;

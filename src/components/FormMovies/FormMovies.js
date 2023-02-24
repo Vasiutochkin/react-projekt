@@ -1,4 +1,5 @@
 import {useDispatch} from "react-redux";
+
 import {movieActions} from "../../redux";
 
 const FormMovies = () => {
@@ -7,12 +8,16 @@ const FormMovies = () => {
 
     const formHandler = (e) => {
         e.preventDefault()
-        dispatch(movieActions.moviesSearch({value: e.target.value}))
-
+        console.log(e.target.value)
+        if (e.target.value === '') {
+            dispatch(movieActions.getAll())
+        } else {
+            dispatch(movieActions.moviesSearch({value: e.target.value}))
+        }
     }
     return (
         <form>
-            <input type="text" name={'movies'} onChange={formHandler}/>
+            <input type="text" placeholder={'Search whatever you want '} name={'movies'} onChange={formHandler}/>
         </form>
     );
 };

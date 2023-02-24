@@ -1,13 +1,14 @@
-import {movieActions} from "../../../redux";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
-import {imageBaseUrl} from "../../../config";
-import picture from './'
+import {MoviesRating} from "../starRatings/StarRatings";
 
+import {imageBaseUrl} from "../../../config";
+import NoImg from './poster/NoPoster.jpg'
+import {movieActions} from "../../../redux";
 
 const Movie = ({movie}) => {
 
-    const {original_title, poster_path, id} = movie;
+    const {original_title, poster_path, id, vote_average} = movie;
 
     const dispatch = useDispatch();
 
@@ -17,18 +18,14 @@ const Movie = ({movie}) => {
             <div>{original_title}</div>
 
             <Link to={id.toString()} onClick={() => dispatch(movieActions.getById({id}))}>
-                {poster_path ?
-                    <img className={'movie-cover'} src={`${imageBaseUrl}${poster_path}`} alt={original_title}/>
-                    :
-                    // вставити картинку
-                    <img src={require("picture/movies.jpg")} alt={original_title}/>
-                    // <img src={picture} alt={original_title}/>
-                    // <div>ffffffffffffeeeeeeeeeeeeeeeeeeee</div>
-
-                }
+                <img src={poster_path ? `${imageBaseUrl}${poster_path}` : NoImg} alt={original_title}/>
             </Link>
+
+            <MoviesRating vote_average={vote_average}/>
         </div>
     );
 };
 
-export {Movie};
+export {
+    Movie
+};
