@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 
-import {movieActions} from "../../redux";
+import {genresActions, movieActions} from "../../redux";
 
 const FormMovies = () => {
 
@@ -8,7 +8,6 @@ const FormMovies = () => {
 
     const formHandler = (e) => {
         e.preventDefault()
-        console.log(e.target.value)
         if (e.target.value === '') {
             dispatch(movieActions.getAll())
         } else {

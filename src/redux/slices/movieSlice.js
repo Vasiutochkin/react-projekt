@@ -4,9 +4,11 @@ import {apiService} from "../../service";
 
 const initialState = {
     movies: [],
+    genresID: [],
+    genres: [],
+    // genresId: [],
     selectMovies: null,
-    moviesSearch: null,
-    genres: null
+
 };
 
 const getAll = createAsyncThunk(
@@ -43,19 +45,32 @@ const moviesSearch = createAsyncThunk(
             return thunkAPI.rejectWithValue(e.response.data)
         }
     }
-)
+);
 
 const movieGenres = createAsyncThunk(
     'movieSlice/genres',
-    async ({list}, thunkAPI) => {
+    async (_, thunkAPI) => {
         try {
-            const {data} = await apiService.genresMovie();
+            const {data} = await apiService.genres();
             return data
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 );
+
+const movieGenresId = createAsyncThunk(
+    'movieSlice/genresId',
+    async ({id}, thunkAPI) => {
+        try {
+            const {data} = await apiService.genresMovie(id);
+            return data
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+);
+
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -73,7 +88,9 @@ const movieSlice = createSlice({
             })
             .addCase(movieGenres.fulfilled, (state, action) => {
                 state.genres = action.payload
-                console.log(action.payload, 'action.payload')
+            })
+            .addCase(movieGenresId.fulfilled, (state, action) => {
+                state.movies = action.payload
             })
 });
 
@@ -83,7 +100,8 @@ const movieActions = {
     getAll,
     getById,
     moviesSearch,
-    movieGenres
+    movieGenres,
+    movieGenresId
 }
 
 export {

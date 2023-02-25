@@ -3,9 +3,10 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
 const urlsMovie = {
     movies: '/discover/movie?page=2',
-    movieById: '/movie',
-    searchMovie: '/search/movie?query',
-    genre: '/genre/movie/list'
+    genre: '/genre/movie/list',
+    genreIds: '/discover/movie?with_genres=',
+    movieById: '/movie/',
+    searchMovie: '/search/movie?query='
 }
 
 export {

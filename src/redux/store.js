@@ -5,7 +5,7 @@ import {toggleReducer} from "./slices/toggleSlice";
 
 const rootReducers = combineReducers({
     movies: movieReducer,
-    toggleReducer
+    toggleReducer: toggleReducer
 });
 
 const setupStore = () => configureStore({

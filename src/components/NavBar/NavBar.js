@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {NavLink} from "react-router-dom";
 
 import {FormMovies} from "../FormMovies/FormMovies";
-import {toggleActions} from "../../redux";
+import {movieActions, toggleActions} from "../../redux";
 import './style.css'
 
 const NavBar = () => {
@@ -21,7 +21,7 @@ const NavBar = () => {
             <div className={'nav-options'}>
                 <h1 id={toggle ? 'Movies' : 'heading'}>CINEMA ROOM</h1>
 
-                <NavLink to={''}>
+                <NavLink to={''} onClick={()=> dispatch(movieActions.getAll())}>
                     <span id={toggle ? '' : 'MoviesLight'}>Movies</span>
                 </NavLink>
 

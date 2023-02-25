@@ -1,29 +1,25 @@
-import {useDispatch} from "react-redux";
-
-import {movieActions} from "../../redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {genresActions, genresReducer, movieActions} from "../../redux";
+import {Genre} from "./Genre/Genre";
+import './genresStyle.css'
 
 const MoviesGenre = () => {
-
     const dispatch = useDispatch();
 
+    const {toggle} = useSelector(state => state.toggleReducer);
 
-    // const formHandler = (e) => {
-    //     e.preventDefault()
-    //     console.log(e.target.value)
-    //     if (e.target.value === '') {
-    //         dispatch(movieActions.getAll())
-    //     } else {
-    //         dispatch(movieActions.moviesSearch({value: e.target.value}))
-    //     }
-    //
+    const {genres: {genres}} = useSelector(state => state.movies);
+
+    useEffect(() => {
+        dispatch(movieActions.movieGenres())
+    }, [dispatch])
 
     return (
-        <div>
-            MoviesGenre
-            <h2>ТУТ МАЄ БУТИ ФІЛЬТРАЦІЯ ПО ЖАНТАМ</h2>
-
-            <button onClick={()=>dispatch(movieActions.movieGenres('Action'))} >MOVIES GENRE</button>
-
+        <div className={toggle === true ? 'mainBgColorGenres' : 'secondaryBgColorGenres'}>
+            <div className={'container'}>
+                {genres && genres.map(genre => <Genre key={genre.id} genre={genre}/>)}
+            </div>
         </div>
     );
 };

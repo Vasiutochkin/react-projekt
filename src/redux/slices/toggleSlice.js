@@ -11,7 +11,6 @@ const toggleSlice = createSlice({
         {
             getToggle: (state, action) => {
                 state.toggle = action.payload
-                console.log('toggleSlice:', action.payload)
             }
         }
 });
