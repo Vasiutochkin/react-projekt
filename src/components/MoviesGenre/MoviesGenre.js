@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {genresActions, genresReducer, movieActions} from "../../redux";
+import {movieActions} from "../../redux";
 import {Genre} from "./Genre/Genre";
 import './genresStyle.css'
 
@@ -13,7 +13,7 @@ const MoviesGenre = () => {
 
     useEffect(() => {
         dispatch(movieActions.movieGenres())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className={toggle === true ? 'mainBgColorGenres' : 'secondaryBgColorGenres'}>
