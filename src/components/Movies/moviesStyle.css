@@ -25,3 +25,23 @@
 .movies-container img:hover{
     transform: scale(1.05);
 }
+
+.pages {
+    background-color: #2d5767;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: .7s;
+    color: #eac786;
+
+
+}
+.pages_black{
+    background-color: #4f5456;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: .7s;
+    color: #020202;
+}
+

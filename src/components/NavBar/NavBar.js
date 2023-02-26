@@ -4,7 +4,10 @@ import {NavLink} from "react-router-dom";
 
 import {FormMovies} from "../FormMovies/FormMovies";
 import {movieActions, toggleActions} from "../../redux";
+// import user from './user/images.jpg'
 import './style.css'
+import {imageBaseUrl} from "../../config";
+import NoImg from "../Movies/Movie/poster/NoPoster.jpg";
 
 
 const NavBar = () => {
@@ -22,12 +25,12 @@ const NavBar = () => {
             <div className={'nav-options'}>
                 <h1 id={toggle ? 'Movies' : 'heading'}>CINEMA ROOM</h1>
 
-                <NavLink to={''} onClick={()=> dispatch(movieActions.getAll())}>
+                <NavLink to={''} onClick={()=> dispatch(movieActions.getAll(dispatch))}>
                     <span id={toggle ? '' : 'MoviesLight'}>Movies</span>
                 </NavLink>
 
                 <NavLink to={'tvShows'}>
-                    <span id={toggle ? '' : 'MoviesLight'}>TV Shows</span>
+                    <span id={toggle ? '' : 'MoviesLight'}>User</span>
                 </NavLink>
 
                 <NavLink to={'trending'}>
@@ -42,7 +45,6 @@ const NavBar = () => {
                 <div id='Color-switcher' onClick={() => setToggle(!toggle)}>
                     <div id={toggle ? 'Color-switcher-mover' : 'Color-switcher-moved'}></div>
                 </div>
-
             </div>
         </nav>
     );
