@@ -10,12 +10,9 @@ nav {
     color: #2a2727;
 }
 
-span #HomeLight, #MoviesLight, #TrendingLight, #PricingLight{
+span, #MoviesLight{
     color: #151313;
 }
-span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:hover{
-    border-bottom: 2px solid #ff206e;}
-
 nav h1{
     color: #ff206e;
     margin-left: 40px;
@@ -34,11 +31,10 @@ nav span{
 nav span:hover{
     color: #EE9B00;
     border-bottom: 2px solid #EE9B00;
-    padding-bottom: 5px;
 }
 
 .navBarColor{
-    background-color: #4ed7c4;
+    background-color: #b4d3b6;
     transition: .6s;
 }
 .nav-options{

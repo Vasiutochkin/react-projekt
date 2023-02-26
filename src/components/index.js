@@ -8,4 +8,5 @@ export * from './Movies/moviesStyle.css'
 export * from './FormMovies/FormMovies';
 export * from './Movies/starRatings/StarRatings';
 export * from './MoviesGenre/Genre/Genre';
+export * from '././MovieDetails/GenresDetails'
 

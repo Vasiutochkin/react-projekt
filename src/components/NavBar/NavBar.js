@@ -18,6 +18,7 @@ const NavBar = () => {
 
     return (
         <nav className={toggle ? '' : 'navBarColor'}>
+
             <div className={'nav-options'}>
                 <h1 id={toggle ? 'Movies' : 'heading'}>CINEMA ROOM</h1>
 
