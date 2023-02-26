@@ -4,7 +4,6 @@ import {useEffect} from "react";
 import {movieActions} from "../../redux";
 import {Movie} from "./Movie/Movie";
 import './moviesStyle.css'
-import {MoviesGenre} from "../MoviesGenre/MoviesGenre";
 import {useSearchParams} from "react-router-dom";
 
 const Movies = () => {

@@ -27,7 +27,7 @@
 }
 
 .pages {
-    background-color: #2d5767;
+    background-color: #2a6073;
     display: flex;
     justify-content: space-around;
     cursor: pointer;
@@ -37,7 +37,7 @@
 
 }
 .pages_black{
-    background-color: #4f5456;
+    background-color: #989d9f;
     display: flex;
     justify-content: space-around;
     cursor: pointer;
