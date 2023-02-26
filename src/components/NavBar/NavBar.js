@@ -4,11 +4,7 @@ import {NavLink} from "react-router-dom";
 
 import {FormMovies} from "../FormMovies/FormMovies";
 import {movieActions, toggleActions} from "../../redux";
-// import user from './user/images.jpg'
 import './style.css'
-import {imageBaseUrl} from "../../config";
-import NoImg from "../Movies/Movie/poster/NoPoster.jpg";
-
 
 const NavBar = () => {
 
@@ -18,7 +14,7 @@ const NavBar = () => {
 
     useEffect(() => {
         dispatch(toggleActions.getToggle(toggle))
-    }, [toggle])
+    }, [dispatch,toggle])
 
     return (
         <nav className={toggle ? '' : 'navBarColor'}>
@@ -29,14 +25,7 @@ const NavBar = () => {
                     <span id={toggle ? '' : 'MoviesLight'}>Movies</span>
                 </NavLink>
 
-                <NavLink to={'tvShows'}>
                     <span id={toggle ? '' : 'MoviesLight'}>User</span>
-                </NavLink>
-
-                <NavLink to={'trending'}>
-                    <span id={toggle ? '' : 'MoviesLight'}>Trending</span>
-                </NavLink>
-
             </div>
             <div className='input-group'>
 
