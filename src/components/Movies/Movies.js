@@ -25,7 +25,7 @@ const Movies = () => {
     return (
         <div className={toggle === true ? 'mainBgColor' : 'secondaryBgColor'}>
 
-                <div className={toggle === true ? 'pages' : 'pages_black'}>
+                <div className={toggle === true ? 'pages' : 'pages_black pages'}>
                     <button disabled={page <= 1} onClick={() => setQuery(query => ({page: +query.get('page') - 1}))}>prev</button>
                     <div>Page: {page}</div>
                     <div>Total page: {total_pages}</div>

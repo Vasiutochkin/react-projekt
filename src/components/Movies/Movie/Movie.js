@@ -16,7 +16,7 @@ const Movie = ({movie}) => {
 
     return (
         <div className={'movie-card'}>
-            <div className={toggle ? 'title' : 'title_black'}>{original_title}</div>
+            <h3 className={toggle ? 'title' : 'title_black title'}>{original_title}</h3>
             <MoviesRating vote_average={vote_average}/>
             <Link to={id.toString()} onClick={() => dispatch(movieActions.getById({id}))}>
                 <img src={poster_path ? `${imageBaseUrl}${poster_path}` : NoImg} alt={original_title}/>
