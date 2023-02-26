@@ -1,4 +1,4 @@
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {MoviesRating} from "../starRatings/StarRatings";
 
@@ -8,6 +8,7 @@ import {movieActions} from "../../../redux";
 import './moviesStyle.css'
 
 const Movie = ({movie}) => {
+    const {toggle} = useSelector(state => state.toggleReducer);
 
     const {original_title, poster_path, id, vote_average} = movie;
 
@@ -15,14 +16,11 @@ const Movie = ({movie}) => {
 
     return (
         <div className={'movie-card'}>
-
-            <div className={'movie-card'}>{original_title}</div>
-
+            <div className={toggle ? 'title' : 'title_black'}>{original_title}</div>
+            <MoviesRating vote_average={vote_average}/>
             <Link to={id.toString()} onClick={() => dispatch(movieActions.getById({id}))}>
                 <img src={poster_path ? `${imageBaseUrl}${poster_path}` : NoImg} alt={original_title}/>
             </Link>
-
-            <MoviesRating vote_average={vote_average}/>
         </div>
     );
 };

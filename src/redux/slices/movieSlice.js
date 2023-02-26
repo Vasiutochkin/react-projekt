@@ -4,9 +4,12 @@ import {apiService} from "../../service";
 
 const initialState = {
     movies: [],
+    page:[],
+    total_pages:[],
+    prev: null,
+    next: null,
     genresID: [],
     genres: [],
-    // genresId: [],
     selectMovies: null,
 
 };

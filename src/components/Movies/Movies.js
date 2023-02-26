@@ -10,12 +10,10 @@ const Movies = () => {
 
     const {toggle} = useSelector(state => state.toggleReducer);
 
-
-
     const {movies} = useSelector(state => state.movies);
-    console.log('movies' ,movies)
 
-    const {results} = movies;
+
+    const {results, page, total_pages} = movies;
 
 
     // const {genresId} = useSelector(state => state.movies);
