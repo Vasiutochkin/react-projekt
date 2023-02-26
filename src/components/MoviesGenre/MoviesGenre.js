@@ -13,7 +13,7 @@ const MoviesGenre = () => {
 
     useEffect(() => {
         dispatch(movieActions.movieGenres())
-    }, [dispatch])
+    }, [])
 
     return (
         <div className={toggle === true ? 'mainBgColorGenres' : 'secondaryBgColorGenres'}>

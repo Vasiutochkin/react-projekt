@@ -1,5 +1,4 @@
 import {imageBaseUrl} from "../../config";
-import css from './DetailStule.module.css'
 import NoImg from "../Movies/Movie/poster/NoPoster.jpg";
 
 const MovieDetails = ({selectMovies}) => {

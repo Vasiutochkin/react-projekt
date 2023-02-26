@@ -1,4 +1,12 @@
+import {apiService} from "../../service";
+
 const Trending = () => {
+
+    apiService.getAll(20)
+
+
+
+
     return (
         <div>
             Trending

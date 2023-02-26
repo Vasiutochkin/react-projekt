@@ -9,7 +9,6 @@ const App = () => {
                 <NavBar/>
                 <Routes>
                     <Route path='' element={<MoviesPage/>}/>
-                    <Route path='/genre' element={<MoviesGenre/>}/>
                     <Route path='/tvShows' element={<TvShowsPage/>}/>
                     <Route path='/trending' element={<TrendingPage/>}/>
                     <Route path=':movieId' element={<MovieDetailsPage/>}/>

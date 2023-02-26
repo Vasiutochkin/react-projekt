@@ -5,6 +5,7 @@ import {MoviesRating} from "../starRatings/StarRatings";
 import {imageBaseUrl} from "../../../config";
 import NoImg from './poster/NoPoster.jpg'
 import {movieActions} from "../../../redux";
+import './moviesStyle.css'
 
 const Movie = ({movie}) => {
 
@@ -15,7 +16,7 @@ const Movie = ({movie}) => {
     return (
         <div className={'movie-card'}>
 
-            <div>{original_title}</div>
+            <div className={'movie-card'}>{original_title}</div>
 
             <Link to={id.toString()} onClick={() => dispatch(movieActions.getById({id}))}>
                 <img src={poster_path ? `${imageBaseUrl}${poster_path}` : NoImg} alt={original_title}/>

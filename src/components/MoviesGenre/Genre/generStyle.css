@@ -1,16 +1,14 @@
 .tag:hover{
     transform: scale(1.05);
     color: #EE9B00;
-    border-bottom: 2px solid #EE9B00;
-    padding-bottom: 5px;
+    border-bottom: 4px solid #EE9B00;
+    padding-bottom: 4px;
 }
 
 .tag{
-    /*color:white;*/
-    padding:10px 20px;
+    padding:10px 15px;
     color: #eac786;
-    border-radius: 50px;
+    border-radius: 10px;
     margin:5px;
     display:inline-block;
-    cursor: pointer;
 }

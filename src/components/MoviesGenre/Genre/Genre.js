@@ -8,10 +8,8 @@ const Genre = ({genre}) => {
     const dispatch = useDispatch();
 
     return (
-        <div className={'tag'}>
-            <div
-                onClick={() => dispatch(movieActions.movieGenresId({id}))}
-            >{name}</div>
+        <div className={'tag'} onClick={() => dispatch(movieActions.movieGenresId({id}))}>
+            <div>{name}</div>
         </div>
     );
 };

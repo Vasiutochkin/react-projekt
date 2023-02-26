@@ -6,6 +6,7 @@ import {FormMovies} from "../FormMovies/FormMovies";
 import {movieActions, toggleActions} from "../../redux";
 import './style.css'
 
+
 const NavBar = () => {
 
     const [toggle, setToggle] = useState(true);
@@ -23,10 +24,6 @@ const NavBar = () => {
 
                 <NavLink to={''} onClick={()=> dispatch(movieActions.getAll())}>
                     <span id={toggle ? '' : 'MoviesLight'}>Movies</span>
-                </NavLink>
-
-                <NavLink to={'genre'}>
-                    <span id={toggle ? '' : 'MoviesLight'}>Movies genre</span>
                 </NavLink>
 
                 <NavLink to={'tvShows'}>

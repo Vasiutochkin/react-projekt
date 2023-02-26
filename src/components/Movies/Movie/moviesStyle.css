@@ -1,0 +1,7 @@
+.movie-card{
+    color: #eac786;
+    margin-left: 40px;
+    font-size: .99rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}

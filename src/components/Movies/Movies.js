@@ -10,8 +10,17 @@ const Movies = () => {
 
     const {toggle} = useSelector(state => state.toggleReducer);
 
+
+
     const {movies} = useSelector(state => state.movies);
+    console.log('movies' ,movies)
+
     const {results} = movies;
+
+
+    // const {genresId} = useSelector(state => state.movies);
+    // console.log(genresId)
+
 
     const dispatch = useDispatch();
 
@@ -23,7 +32,9 @@ const Movies = () => {
         <div className={toggle === true ? 'mainBgColor' : 'secondaryBgColor'}>
             <div className={'movies-container'}>
 
+
                 {results && results.map(movie => <Movie key={movie.id} movie={movie}/>)}
+
 
             </div>
         </div>
